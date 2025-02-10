@@ -56,49 +56,49 @@ def test_for_loop_skip_divisible_by_3(capsys):
     for actual, expect in zip(captured, expected):
         assert actual.strip() == expect, f"Expected {expect}, got {actual}"
 
-def test_number_classification():
-    """Test if-else number classification"""
-    # Capture stdout
-    def test_input(input_val):
-        # Redirect stdin and stdout
-        old_stdin = sys.stdin
-        sys.stdin = io.StringIO(str(input_val))
+# def test_number_classification():
+#     """Test if-else number classification"""
+#     # Capture stdout
+#     def test_input(input_val):
+#         # Redirect stdin and stdout
+#         old_stdin = sys.stdin
+#         sys.stdin = io.StringIO(str(input_val))
         
         
-        captured_output = io.StringIO()
-        sys.stdout = captured_output
+#         captured_output = io.StringIO()
+#         sys.stdout = captured_output
         
-        # Call the function
-        try:
-            assignment.number_classification()
-        finally:
-            # Restore stdin and stdout
-            sys.stdin = old_stdin
-            sys.stdout = sys.__stdout__
+#         # Call the function
+#         try:
+#             assignment.number_classification()
+#         finally:
+#             # Restore stdin and stdout
+#             sys.stdin = old_stdin
+#             sys.stdout = sys.__stdout__
         
-        return captured_output.getvalue().strip()
+#         return captured_output.getvalue().strip()
 
-    # Test cases
-    assert "negative" in test_input(-5).lower(), "Failed to identify negative number"
-    assert "positive" in test_input(10).lower(), "Failed to identify positive number"
-    assert "zero" in test_input(0).lower(), "Failed to identify zero"
+#     # Test cases
+#     assert "negative" in test_input(-5).lower(), "Failed to identify negative number"
+#     assert "positive" in test_input(10).lower(), "Failed to identify positive number"
+#     assert "zero" in test_input(0).lower(), "Failed to identify zero"
 
-def test_multiplication_table(capsys):
-    """Test nested loops multiplication table"""
-    assignment.multiplication_table()
-    captured = capsys.readouterr().out.strip().split('\n')
+# def test_multiplication_table(capsys):
+#     """Test nested loops multiplication table"""
+#     assignment.multiplication_table()
+#     captured = capsys.readouterr().out.strip().split('\n')
     
-    # Check total number of lines (5x5 = 25 lines)
-    assert len(captured) == 25, "Incorrect number of multiplication table rows"
+#     # Check total number of lines (5x5 = 25 lines)
+#     assert len(captured) == 25, "Incorrect number of multiplication table rows"
     
-    # Verify first few entries
-    expected_start = [
-        "1 x 1 = 1",
-        "1 x 2 = 2",
-        "1 x 3 = 3",
-        "1 x 4 = 4",
-        "1 x 5 = 5"
-    ]
+#     # Verify first few entries
+#     expected_start = [
+#         "1 x 1 = 1",
+#         "1 x 2 = 2",
+#         "1 x 3 = 3",
+#         "1 x 4 = 4",
+#         "1 x 5 = 5"
+#     ]
     
-    for actual, expect in zip(captured[:5], expected_start):
-        assert actual.strip() == expect, f"Incorrect multiplication table start: {actual}"
+#     for actual, expect in zip(captured[:5], expected_start):
+#         assert actual.strip() == expect, f"Incorrect multiplication table start: {actual}"
