@@ -25,5 +25,5 @@ jobs:
 
     - name: Run tests
       run: |
-        pytest -s test_assignment.py -v
+        pytest test_assignment.py -v
 
